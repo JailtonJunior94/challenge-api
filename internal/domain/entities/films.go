@@ -1,6 +1,10 @@
 package entities
 
-import "errors"
+import (
+	"errors"
+
+	"github.com/jailtonjunior94/challenge/pkg/entity"
+)
 
 var (
 	ErrTitleIsRequired       = errors.New("title is required")
@@ -9,6 +13,7 @@ var (
 )
 
 type Film struct {
+	ID          entity.ID
 	Title       string
 	Director    string
 	ReleaseDate string
@@ -16,6 +21,7 @@ type Film struct {
 
 func NewFilm(title, director, releaseDate string) (*Film, error) {
 	Film := &Film{
+		ID:          entity.NewID(),
 		Title:       title,
 		Director:    director,
 		ReleaseDate: releaseDate,

@@ -1,6 +1,10 @@
 package entities
 
-import "errors"
+import (
+	"errors"
+
+	"github.com/jailtonjunior94/challenge/pkg/entity"
+)
 
 var (
 	ErrNameIsRequired    = errors.New("name is required")
@@ -10,6 +14,7 @@ var (
 )
 
 type Planet struct {
+	ID      entity.ID `json:"id"`
 	Name    string
 	Climate string
 	Terrain string
@@ -18,6 +23,7 @@ type Planet struct {
 
 func NewPlanet(name, climate, terrain string) (*Planet, error) {
 	planet := &Planet{
+		ID:      entity.NewID(),
 		Name:    name,
 		Climate: climate,
 		Terrain: terrain,
