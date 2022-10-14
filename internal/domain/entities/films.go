@@ -8,28 +8,28 @@ var (
 	ErrReleaseDateIsRequired = errors.New("release date is required")
 )
 
-type Films struct {
+type Film struct {
 	Title       string
 	Director    string
 	ReleaseDate string
 }
 
-func NewFilms(title, director, releaseDate string) (*Films, error) {
-	Films := &Films{
+func NewFilm(title, director, releaseDate string) (*Film, error) {
+	Film := &Film{
 		Title:       title,
 		Director:    director,
 		ReleaseDate: releaseDate,
 	}
 
-	err := Films.Validate()
+	err := Film.Validate()
 	if err != nil {
 		return nil, err
 	}
 
-	return Films, nil
+	return Film, nil
 }
 
-func (f *Films) Validate() error {
+func (f *Film) Validate() error {
 	if f.Title == "" {
 		return ErrTitleIsRequired
 	}

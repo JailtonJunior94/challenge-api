@@ -1,0 +1,24 @@
+mode: set
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:17.66,25.16 3 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:29.2,29.18 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:25.16,27.3 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:32.33,33.19 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:37.2,37.22 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:41.2,41.25 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:44.2,44.12 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:33.19,35.3 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:37.22,39.3 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/films.go:41.25,43.3 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:19.64,27.16 3 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:31.2,31.20 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:27.16,29.3 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:34.35,35.18 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:39.2,39.21 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:43.2,43.21 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:46.2,46.12 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:35.18,37.3 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:39.21,41.3 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:43.21,45.3 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:49.44,50.17 1 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:54.2,55.12 2 1
+github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:50.17,52.3 1 1
