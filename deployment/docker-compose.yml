@@ -1,19 +1,32 @@
 version: "3"
 
 services:
-  challenge_api:
-    container_name: challenge_api
-    image: challenge_api
-    build:
-      context: ..
-      dockerfile: cmd/api/Dockerfile
+  # challenge_api:
+  #   container_name: challenge_api
+  #   image: challenge_api
+  #   build:
+  #     context: ..
+  #     dockerfile: cmd/api/Dockerfile
+  #   restart: always
+  #   ports:
+  #     - "9000:80"
+  #   networks:
+  #     - challeng_net
+  #   environment:
+  #     - PORT=80
+
+  mssql:
+    container_name: mssql
+    image: mcr.microsoft.com/mssql/server:2019-latest
     restart: always
     ports:
-      - "9000:80"
+      - "1433:1433"
     networks:
       - challeng_net
     environment:
-      - PORT=80
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: '@docker@2022'
+      MSSQL_AGENT_ENABLED: 'True'
 
 networks:
   challeng_net:
