@@ -1,15 +1,15 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/jailtonjunior94/challenge/configs"
 	"github.com/jailtonjunior94/challenge/internal/infra/facades"
 	"github.com/jailtonjunior94/challenge/internal/infra/repositories"
 	"github.com/jailtonjunior94/challenge/internal/usecases"
 	"github.com/jailtonjunior94/challenge/pkg/database"
+	"github.com/jailtonjunior94/challenge/pkg/logger"
 
 	_ "github.com/denisenkom/go-mssqldb"
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
@@ -18,6 +18,9 @@ func main() {
 		panic(err)
 	}
 
+	file := logger.NewLoggerFile(config.LogPath)
+	defer file.Close()
+
 	db, err := database.NewSqlServerConnection(config)
 	if err != nil {
 		panic(err)
@@ -25,9 +28,12 @@ func main() {
 	defer db.Close()
 
 	planetRepository := repositories.NewPlanetRepository(db)
-	starWarsAPI := facades.NewStarWarsFacade(config.StarWarsAPI)
-	importUseCase := usecases.NewImportPlanetUseCase(planetRepository, starWarsAPI)
+	starWarsAPI := facades.NewStarWarsFacade()
+	importUseCase := usecases.NewImportPlanetUseCase(planetRepository, starWarsAPI, config.StarWarsAPI)
 
 	err = importUseCase.Execute()
-	fmt.Println(err)
+	if err != nil {
+		logrus.Errorf("Erro ao importar planetas, %v", err)
+	}
+	logrus.Info("Planetas importados com sucesso")
 }

@@ -14,7 +14,7 @@ var (
 )
 
 type Planet struct {
-	ID      entity.ID `json:"id"`
+	ID      entity.ID
 	Name    string
 	Climate string
 	Terrain string

@@ -6,6 +6,6 @@ type PlanetRepository interface {
 	FindByID(id string) (*entities.Planet, error)
 	FindAll(name string, page int, limit int) ([]entities.Planet, error)
 	Remove(id string) error
-	AddPlanet(p *entities.Planet) (*entities.Planet, error)
+	AddPlanet(p *entities.Planet) error
 	AddFilm(f *entities.Film) error
 }

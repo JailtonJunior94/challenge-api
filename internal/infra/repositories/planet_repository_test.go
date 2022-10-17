@@ -54,7 +54,7 @@ func TestAddPlanet(t *testing.T) {
 	planetRepository := NewPlanetRepository(db)
 	planet, _ := entities.NewPlanet("Tatooine", "arid", "desert")
 
-	_, err := planetRepository.AddPlanet(planet)
+	err := planetRepository.AddPlanet(planet)
 	assert.Nil(t, err)
 }
 
@@ -76,7 +76,7 @@ func TestFindByID(t *testing.T) {
 
 	planetRepository := NewPlanetRepository(db)
 	planet, _ := entities.NewPlanet("Tatooine", "arid", "desert")
-	_, err := planetRepository.AddPlanet(planet)
+	err := planetRepository.AddPlanet(planet)
 	assert.Nil(t, err)
 
 	filmOne, _ := entities.NewFilm(planet.ID.String(), "A New Hope", "George Lucas", "1977-05-25")
@@ -104,7 +104,7 @@ func TestRemovePlanet(t *testing.T) {
 
 	planetRepository := NewPlanetRepository(db)
 	planet, _ := entities.NewPlanet("Tatooine", "arid", "desert")
-	_, err := planetRepository.AddPlanet(planet)
+	err := planetRepository.AddPlanet(planet)
 	assert.Nil(t, err)
 
 	filmOne, _ := entities.NewFilm(planet.ID.String(), "A New Hope", "George Lucas", "1977-05-25")

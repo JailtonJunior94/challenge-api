@@ -7,6 +7,8 @@ import (
 	"time"
 
 	"github.com/jailtonjunior94/challenge/internal/domain/dtos"
+
+	"github.com/sirupsen/logrus"
 )
 
 var (
@@ -16,14 +18,13 @@ var (
 
 type StarWarsFacade struct {
 	HttpClient *http.Client
-	BaseURL    string
 }
 
-func NewStarWarsFacade(baseURL string) *StarWarsFacade {
+func NewStarWarsFacade() *StarWarsFacade {
 	client := &http.Client{
 		Timeout: 10 * time.Second,
 	}
-	return &StarWarsFacade{HttpClient: client, BaseURL: baseURL}
+	return &StarWarsFacade{HttpClient: client}
 }
 
 func (f *StarWarsFacade) FetchPlanets(uri string) (*dtos.PaginateOutput[dtos.PlanetsOutput], error) {
@@ -31,16 +32,19 @@ func (f *StarWarsFacade) FetchPlanets(uri string) (*dtos.PaginateOutput[dtos.Pla
 	req.Header.Set("Content-Type", "application/json")
 
 	if err != nil {
+		logrus.Errorf("Erro ao obter planetas %v", err)
 		return nil, err
 	}
 
 	resp, err := f.HttpClient.Do(req)
 	if err != nil {
+		logrus.Errorf("Erro ao obter planetas %v", err)
 		return nil, err
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
+		logrus.Errorf("Erro ao obter planetas, status code %d", resp.StatusCode)
 		return nil, ErrFetchPlanets
 	}
 
@@ -49,6 +53,7 @@ func (f *StarWarsFacade) FetchPlanets(uri string) (*dtos.PaginateOutput[dtos.Pla
 		return nil, err
 	}
 
+	logrus.Info("Sucesso ao obter planetas")
 	return paginate, nil
 }
 

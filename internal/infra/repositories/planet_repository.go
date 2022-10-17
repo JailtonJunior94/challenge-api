@@ -18,12 +18,12 @@ func (r *planetRepository) FindAll(name string, page int, limit int) ([]entities
 	return nil, nil
 }
 
-func (r *planetRepository) AddPlanet(p *entities.Planet) (*entities.Planet, error) {
+func (r *planetRepository) AddPlanet(p *entities.Planet) error {
 	query := `INSERT INTO Planets VALUES (@planetID, @name, @climate, @terrain);`
 
 	stmt, err := r.DB.Prepare(query)
 	if err != nil {
-		return nil, err
+		return err
 	}
 	defer stmt.Close()
 
@@ -34,15 +34,15 @@ func (r *planetRepository) AddPlanet(p *entities.Planet) (*entities.Planet, erro
 		sql.Named("terrain", p.Terrain))
 
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	rows, err := result.RowsAffected()
 	if rows == 0 {
-		return nil, err
+		return err
 	}
 
-	return p, nil
+	return nil
 }
 
 func (r *planetRepository) AddFilm(f *entities.Film) error {

@@ -13,6 +13,7 @@ type Conf struct {
 	DBName      string `mapstructure:"DB_NAME"`
 	ServerPort  string `mapstructure:"SERVER_PORT"`
 	StarWarsAPI string `mapstructure:"STAR_WARS_API"`
+	LogPath     string `mapstructure:"LOG_PATH"`
 }
 
 func LoadConfig(path string) (*Conf, error) {
