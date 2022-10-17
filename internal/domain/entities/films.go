@@ -14,11 +14,11 @@ var (
 )
 
 type Film struct {
-	ID          string `json:"id"`
-	PlanetID    string `json:"planetId"`
-	Title       string `json:"title"`
-	Director    string `json:"director"`
-	ReleaseDate string `json:"releaseDate"`
+	ID          string `json:"id,omitempty"`
+	PlanetID    string `json:"planetId,omitempty"`
+	Title       string `json:"title,omitempty"`
+	Director    string `json:"director,omitempty"`
+	ReleaseDate string `json:"releaseDate,omitempty"`
 }
 
 func NewFilm(planetID, title, director, releaseDate string) (*Film, error) {

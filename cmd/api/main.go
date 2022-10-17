@@ -11,7 +11,6 @@ import (
 
 	_ "github.com/denisenkom/go-mssqldb"
 	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
 )
 
 func main() {
@@ -34,9 +33,8 @@ func main() {
 	removeUseCase := usecases.NewRemoveHandler(planetRepository)
 
 	router := chi.NewRouter()
-	router.Use(middleware.Logger)
 
-	router.Get("/planets", fetchUseCase.GetPlanetByID)
+	router.Get("/planets", fetchUseCase.GetPlanets)
 	router.Get("/planets/{id}", fetchUseCase.GetPlanetByID)
 	router.Delete("/planets/{id}", removeUseCase.RemovePlanetByID)
 

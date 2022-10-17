@@ -2,10 +2,10 @@ package usecases
 
 import (
 	"database/sql"
-	"encoding/json"
 	"errors"
 	"net/http"
 
+	"github.com/jailtonjunior94/challenge/internal/domain/dtos"
 	"github.com/jailtonjunior94/challenge/internal/domain/interfaces"
 	"github.com/jailtonjunior94/challenge/pkg/responses"
 
@@ -47,19 +47,20 @@ func (h *FetchHandler) GetPlanetByID(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *FetchHandler) GetPlanets(w http.ResponseWriter, r *http.Request) {
-	id := chi.URLParam(r, "id")
-	if id == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		return
-	}
+	input := dtos.NewFilterPlanetInput(r.URL.Query().Get("name"), r.URL.Query().Get("page"), r.URL.Query().Get("limit"))
 
-	planet, err := h.PlanetRepository.FindByID(id)
+	planets, err := h.PlanetRepository.FindAll(input.Name, input.Page, input.Limit)
 	if err != nil {
-		w.WriteHeader(http.StatusNotFound)
+		if errors.Is(err, sql.ErrNoRows) {
+			responses.Error(w, http.StatusNotFound, "Não foi encontrado nenhum planeta")
+			logrus.Errorf(err.Error())
+			return
+		}
+
+		responses.Error(w, http.StatusInternalServerError, "Não foi possível encontrar planetas")
+		logrus.Errorf(err.Error())
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(planet)
+	responses.JSON(w, http.StatusOK, planets)
 }
