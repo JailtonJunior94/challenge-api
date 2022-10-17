@@ -14,16 +14,16 @@ var (
 )
 
 type Planet struct {
-	ID      entity.ID `json:"id"`
-	Name    string    `json:"name"`
-	Climate string    `json:"climate"`
-	Terrain string    `json:"terrain"`
-	Films   []Film    `json:"films"`
+	ID      string `json:"id"`
+	Name    string `json:"name"`
+	Climate string `json:"climate"`
+	Terrain string `json:"terrain"`
+	Films   []Film `json:"films"`
 }
 
 func NewPlanet(name, climate, terrain string) (*Planet, error) {
 	planet := &Planet{
-		ID:      entity.NewID(),
+		ID:      entity.NewID().String(),
 		Name:    name,
 		Climate: climate,
 		Terrain: terrain,

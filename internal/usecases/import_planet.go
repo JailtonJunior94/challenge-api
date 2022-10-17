@@ -77,7 +77,7 @@ func (u *importPlanetUseCase) fetchPlanets() ([]entities.Planet, error) {
 			continue
 		}
 
-		films, err := u.fetchFilms(planet.ID.String(), p.Films)
+		films, err := u.fetchFilms(planet.ID, p.Films)
 		if err != nil {
 			logrus.Errorf("Erro ao obter filmes %v", err)
 			continue

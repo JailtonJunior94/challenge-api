@@ -31,11 +31,14 @@ func main() {
 
 	planetRepository := repositories.NewPlanetRepository(db)
 	fetchUseCase := usecases.NewFetchHandler(planetRepository)
+	removeUseCase := usecases.NewRemoveHandler(planetRepository)
 
 	router := chi.NewRouter()
 	router.Use(middleware.Logger)
 
+	router.Get("/planets", fetchUseCase.GetPlanetByID)
 	router.Get("/planets/{id}", fetchUseCase.GetPlanetByID)
+	router.Delete("/planets/{id}", removeUseCase.RemovePlanetByID)
 
 	http.ListenAndServe(":8080", router)
 }

@@ -105,11 +105,11 @@ func (r *planetRepository) FindByID(id string) (*entities.Planet, error) {
 				p.Name,
 				p.Climate,
 				p.Terrain,
-				CAST(f.Id AS CHAR(36)) Id,
-				f.PlanetId,
-				f.Title,
-				f.Director,
-				f.ReleaseDate
+				COALESCE(CAST(f.Id AS CHAR(36)), '') Id,
+				COALESCE(CAST(f.PlanetId AS CHAR(36)), '') PlanetId,
+				COALESCE(f.Title, '') Title,
+				COALESCE(f.Director, '') Director,
+				COALESCE(f.ReleaseDate, '') ReleaseDate
 			FROM
 				Planets p 
 				LEFT JOIN Films f ON p.Id = f.PlanetId
@@ -131,11 +131,15 @@ func (r *planetRepository) FindByID(id string) (*entities.Planet, error) {
 		}
 
 		item := entities.Film{ID: f.ID, PlanetID: f.PlanetID, Title: f.Title, Director: f.Director, ReleaseDate: f.ReleaseDate}
-		if items, ok := films[p.ID.String()]; ok {
-			films[p.ID.String()] = append(items, item)
+		if items, ok := films[p.ID]; ok {
+			films[p.ID] = append(items, item)
 		} else {
-			films[p.ID.String()] = []entities.Film{item}
+			films[p.ID] = []entities.Film{item}
 		}
+	}
+
+	if p.ID == "" {
+		return nil, sql.ErrNoRows
 	}
 
 	p.AddFilms(films[id])

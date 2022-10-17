@@ -15,7 +15,7 @@ func TestFilm(t *testing.T) {
 	}{
 		{
 			name:  "Should created film with success",
-			input: Film{PlanetID: entity.NewID(), Title: "A New Hope", Director: "George Lucas", ReleaseDate: "1977-05-25"},
+			input: Film{PlanetID: entity.NewID().String(), Title: "A New Hope", Director: "George Lucas", ReleaseDate: "1977-05-25"},
 			expected: func(p *Film, err error) {
 				assert.Nil(t, err)
 				assert.NotNil(t, p)
@@ -27,7 +27,7 @@ func TestFilm(t *testing.T) {
 		},
 		{
 			name:  "Should validated when title is required",
-			input: Film{PlanetID: entity.NewID(), Title: "", Director: "George Lucas", ReleaseDate: "1977-05-25"},
+			input: Film{PlanetID: entity.NewID().String(), Title: "", Director: "George Lucas", ReleaseDate: "1977-05-25"},
 			expected: func(p *Film, err error) {
 				assert.Nil(t, p)
 				assert.Equal(t, ErrTitleIsRequired, err)
@@ -35,7 +35,7 @@ func TestFilm(t *testing.T) {
 		},
 		{
 			name:  "Should validated when director is required",
-			input: Film{PlanetID: entity.NewID(), Title: "A New Hope", Director: "", ReleaseDate: "1977-05-25"},
+			input: Film{PlanetID: entity.NewID().String(), Title: "A New Hope", Director: "", ReleaseDate: "1977-05-25"},
 			expected: func(p *Film, err error) {
 				assert.Nil(t, p)
 				assert.Equal(t, ErrDirectorIsRequired, err)
@@ -43,7 +43,7 @@ func TestFilm(t *testing.T) {
 		},
 		{
 			name:  "Should validated when release date is required",
-			input: Film{PlanetID: entity.NewID(), Title: "A New Hope", Director: "George Lucas", ReleaseDate: ""},
+			input: Film{PlanetID: entity.NewID().String(), Title: "A New Hope", Director: "George Lucas", ReleaseDate: ""},
 			expected: func(p *Film, err error) {
 				assert.Nil(t, p)
 				assert.Equal(t, ErrReleaseDateIsRequired, err)
@@ -53,7 +53,7 @@ func TestFilm(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			film, err := NewFilm(tc.input.PlanetID.String(), tc.input.Title, tc.input.Director, tc.input.ReleaseDate)
+			film, err := NewFilm(tc.input.PlanetID, tc.input.Title, tc.input.Director, tc.input.ReleaseDate)
 			tc.expected(film, err)
 		})
 	}

@@ -64,7 +64,7 @@ func TestAddFilm(t *testing.T) {
 
 	planetRepository := NewPlanetRepository(db)
 	planet, _ := entities.NewPlanet("Tatooine", "arid", "desert")
-	film, _ := entities.NewFilm(planet.ID.String(), "A New Hope", "George Lucas", "1977-05-25")
+	film, _ := entities.NewFilm(planet.ID, "A New Hope", "George Lucas", "1977-05-25")
 
 	err := planetRepository.AddFilm(film)
 	assert.Nil(t, err)
@@ -79,8 +79,8 @@ func TestFindByID(t *testing.T) {
 	err := planetRepository.AddPlanet(planet)
 	assert.Nil(t, err)
 
-	filmOne, _ := entities.NewFilm(planet.ID.String(), "A New Hope", "George Lucas", "1977-05-25")
-	filmTwo, _ := entities.NewFilm(planet.ID.String(), "Return of the Jedi", "Richard Marquand", "1983-05-25")
+	filmOne, _ := entities.NewFilm(planet.ID, "A New Hope", "George Lucas", "1977-05-25")
+	filmTwo, _ := entities.NewFilm(planet.ID, "Return of the Jedi", "Richard Marquand", "1983-05-25")
 
 	var films []entities.Film
 	films = append(films, *filmOne)
@@ -91,7 +91,7 @@ func TestFindByID(t *testing.T) {
 		assert.Nil(t, err)
 	}
 
-	p, err := planetRepository.FindByID(planet.ID.String())
+	p, err := planetRepository.FindByID(planet.ID)
 	assert.Nil(t, err)
 	assert.NotNil(t, p)
 	assert.Equal(t, "Tatooine", p.Name)
@@ -107,8 +107,8 @@ func TestRemovePlanet(t *testing.T) {
 	err := planetRepository.AddPlanet(planet)
 	assert.Nil(t, err)
 
-	filmOne, _ := entities.NewFilm(planet.ID.String(), "A New Hope", "George Lucas", "1977-05-25")
-	filmTwo, _ := entities.NewFilm(planet.ID.String(), "Return of the Jedi", "Richard Marquand", "1983-05-25")
+	filmOne, _ := entities.NewFilm(planet.ID, "A New Hope", "George Lucas", "1977-05-25")
+	filmTwo, _ := entities.NewFilm(planet.ID, "Return of the Jedi", "Richard Marquand", "1983-05-25")
 
 	var films []entities.Film
 	films = append(films, *filmOne)
@@ -119,6 +119,6 @@ func TestRemovePlanet(t *testing.T) {
 		assert.Nil(t, err)
 	}
 
-	err = planetRepository.Remove(planet.ID.String())
+	err = planetRepository.Remove(planet.ID)
 	assert.Nil(t, err)
 }
