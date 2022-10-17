@@ -16,13 +16,14 @@ var (
 
 type StarWarsFacade struct {
 	HttpClient *http.Client
+	BaseURL    string
 }
 
-func NewStarWarsFacade() *StarWarsFacade {
+func NewStarWarsFacade(baseURL string) *StarWarsFacade {
 	client := &http.Client{
 		Timeout: 10 * time.Second,
 	}
-	return &StarWarsFacade{HttpClient: client}
+	return &StarWarsFacade{HttpClient: client, BaseURL: baseURL}
 }
 
 func (f *StarWarsFacade) FetchPlanets(uri string) (*dtos.PaginateOutput[dtos.PlanetsOutput], error) {

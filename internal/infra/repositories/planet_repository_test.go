@@ -98,7 +98,7 @@ func TestFindByID(t *testing.T) {
 	assert.Len(t, p.Films, 2)
 }
 
-func TestDeletePlanet(t *testing.T) {
+func TestRemovePlanet(t *testing.T) {
 	db := initDB()
 	defer downDB(db)
 
@@ -106,6 +106,18 @@ func TestDeletePlanet(t *testing.T) {
 	planet, _ := entities.NewPlanet("Tatooine", "arid", "desert")
 	_, err := planetRepository.AddPlanet(planet)
 	assert.Nil(t, err)
+
+	filmOne, _ := entities.NewFilm(planet.ID.String(), "A New Hope", "George Lucas", "1977-05-25")
+	filmTwo, _ := entities.NewFilm(planet.ID.String(), "Return of the Jedi", "Richard Marquand", "1983-05-25")
+
+	var films []entities.Film
+	films = append(films, *filmOne)
+	films = append(films, *filmTwo)
+
+	for _, f := range films {
+		err := planetRepository.AddFilm(&f)
+		assert.Nil(t, err)
+	}
 
 	err = planetRepository.Remove(planet.ID.String())
 	assert.Nil(t, err)

@@ -14,6 +14,10 @@ func NewPlanetRepository(db *sql.DB) *planetRepository {
 	return &planetRepository{DB: db}
 }
 
+func (r *planetRepository) FindAll(name string, page int, limit int) ([]entities.Planet, error) {
+	return nil, nil
+}
+
 func (r *planetRepository) AddPlanet(p *entities.Planet) (*entities.Planet, error) {
 	query := `INSERT INTO Planets VALUES (@planetID, @name, @climate, @terrain);`
 
@@ -108,7 +112,7 @@ func (r *planetRepository) FindByID(id string) (*entities.Planet, error) {
 				f.ReleaseDate
 			FROM
 				Planets p 
-				INNER JOIN Films f ON p.Id = f.PlanetId
+				LEFT JOIN Films f ON p.Id = f.PlanetId
 			WHERE
 				p.Id = @id`
 

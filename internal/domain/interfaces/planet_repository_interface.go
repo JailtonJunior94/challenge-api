@@ -7,5 +7,5 @@ type PlanetRepository interface {
 	FindAll(name string, page int, limit int) ([]entities.Planet, error)
 	Remove(id string) error
 	AddPlanet(p *entities.Planet) (*entities.Planet, error)
-	AddFilm(f *entities.Film) (*entities.Planet, error)
+	AddFilm(f *entities.Film) error
 }
