@@ -14,11 +14,11 @@ var (
 )
 
 type Planet struct {
-	ID      entity.ID
-	Name    string
-	Climate string
-	Terrain string
-	Films   []Film
+	ID      entity.ID `json:"id"`
+	Name    string    `json:"name"`
+	Climate string    `json:"climate"`
+	Terrain string    `json:"terrain"`
+	Films   []Film    `json:"films"`
 }
 
 func NewPlanet(name, climate, terrain string) (*Planet, error) {

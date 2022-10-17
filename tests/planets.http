@@ -1,0 +1,2 @@
+###
+GET http://localhost:8080/planets/73CFA349-1109-4CA5-8EDB-E4BE140833AD HTTP/1.1
