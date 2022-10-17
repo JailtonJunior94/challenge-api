@@ -5,6 +5,7 @@ go 1.19
 require (
 	github.com/denisenkom/go-mssqldb v0.12.3
 	github.com/google/uuid v1.3.0
+	github.com/mattn/go-sqlite3 v1.14.15
 	github.com/spf13/viper v1.13.0
 	github.com/stretchr/testify v1.8.0
 )

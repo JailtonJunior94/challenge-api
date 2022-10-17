@@ -10,24 +10,32 @@ var (
 	ErrTitleIsRequired       = errors.New("title is required")
 	ErrDirectorIsRequired    = errors.New("director is required")
 	ErrReleaseDateIsRequired = errors.New("release date is required")
+	ErrInvalidID             = errors.New("invalid id")
 )
 
 type Film struct {
 	ID          entity.ID
+	PlanetID    entity.ID
 	Title       string
 	Director    string
 	ReleaseDate string
 }
 
-func NewFilm(title, director, releaseDate string) (*Film, error) {
+func NewFilm(planetID, title, director, releaseDate string) (*Film, error) {
+	p, err := entity.ParseID(planetID)
+	if err != nil {
+		return nil, ErrInvalidID
+	}
+
 	Film := &Film{
 		ID:          entity.NewID(),
+		PlanetID:    p,
 		Title:       title,
 		Director:    director,
 		ReleaseDate: releaseDate,
 	}
 
-	err := Film.Validate()
+	err = Film.Validate()
 	if err != nil {
 		return nil, err
 	}

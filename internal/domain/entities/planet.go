@@ -60,3 +60,8 @@ func (p *Planet) AddFilm(film *Film) error {
 	p.Films = append(p.Films, *film)
 	return nil
 }
+
+func (p *Planet) AddFilms(films []Film) error {
+	p.Films = films
+	return nil
+}
