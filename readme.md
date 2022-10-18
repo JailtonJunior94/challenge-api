@@ -15,7 +15,7 @@ Todas as informações necessárias podem ser obtidas pela API pública do [Star
 - Carregar um planeta da API através do Id
 - Listar os planetas
 - Buscar planeta por nome
-- Buscar por ID,
+- Buscar por ID
 - Remover planeta
 
 # Requisitos
@@ -79,5 +79,18 @@ cobertura dos testes;
   <img src="docs/logs.png" width="800" title="Main">
 </p>
   
-# Sonar Cloud
-- Exemplo do projeto depois de analisado no Sonar Cloud
+# Collection do POSTMAN
+- Link da Collection
+- Ambiente Local <strong>http://localhost:8080</strong>
+- Ambiente Simulando Produção <strong></strong>
+ ```
+ https://www.getpostman.com/collections/0acb7b5c4b1e38b8e2d3
+ ```
+- Pode ser utilizado os testes no caminho <strong>tests/planets.http</strong>
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=bugs)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=code_smells)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=coverage)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
+
+# Utilizando o projeto em um ambiente Kubernetes [Simulando produção]

@@ -75,25 +75,25 @@ spec:
   ports:
   - port: 80
     targetPort: 80
-  type: ClusterIP
+  type: LoadBalancer
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: challenge_api
+#   labels:
+#     name: challenge_api
+#   annotations:
+#     kubernetes.io/ingress.class: addon-http-application-routing
+# spec:
+#   rules:
+#   - host: challenge-api.{DNSzone}
+#     http:
+#       paths:
+#       - path: "/"
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: challenge_api
+#             port:
+#               number: 80
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: challenge_api
-  labels:
-    name: challenge_api
-  annotations:
-    kubernetes.io/ingress.class: addon-http-application-routing
-spec:
-  rules:
-  - host: challenge-api.{DNSzone}
-    http:
-      paths:
-      - path: "/"
-        pathType: Prefix
-        backend:
-          service:
-            name: challenge_api
-            port:
-              number: 80
