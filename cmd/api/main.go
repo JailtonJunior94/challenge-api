@@ -29,8 +29,8 @@ func main() {
 	defer db.Close()
 
 	planetRepository := repositories.NewPlanetRepository(db)
-	fetchUseCase := usecases.NewFetchHandler(planetRepository)
-	removeUseCase := usecases.NewRemoveHandler(planetRepository)
+	fetchUseCase := usecases.NewFetchPlanetUseCase(planetRepository)
+	removeUseCase := usecases.NewRemovePlanetUseCase(planetRepository)
 
 	router := chi.NewRouter()
 

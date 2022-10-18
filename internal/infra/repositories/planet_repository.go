@@ -5,6 +5,7 @@ import (
 	"database/sql"
 
 	"github.com/jailtonjunior94/challenge/internal/domain/entities"
+	"github.com/sirupsen/logrus"
 )
 
 type planetRepository struct {
@@ -15,10 +16,42 @@ func NewPlanetRepository(db *sql.DB) *planetRepository {
 	return &planetRepository{DB: db}
 }
 
-func (r *planetRepository) FindAll(name string, page int, limit int) ([]entities.Planet, error) {
+func (r *planetRepository) countPlanets(name string) (int, error) {
 	var b bytes.Buffer
 
-	b.WriteString(`SELECT CAST(p.Id AS CHAR(36)) Id, p.Name, p.Climate, p.Terrain FROM Planets p`)
+	b.WriteString(`SELECT COUNT(*) FROM Planets p`)
+	if name != "" {
+		b.WriteString(" WHERE p.Name = @name")
+	}
+
+	rows, err := r.DB.Query(b.String(), sql.Named("name", name))
+	if err != nil {
+		logrus.Errorf("[PlanetRepository] [countPlanets] [Error] [%v]", err)
+		return 0, err
+	}
+	defer rows.Close()
+
+	var count int
+	for rows.Next() {
+		if err := rows.Scan(&count); err != nil {
+			logrus.Errorf("[PlanetRepository] [countPlanets] [Error] [%v]", err)
+			return 0, err
+		}
+	}
+
+	return count, nil
+}
+
+func (r *planetRepository) FindAll(name string, page int, limit int) (int, []entities.Planet, error) {
+	count, err := r.countPlanets(name)
+	if err != nil {
+		logrus.Errorf("[PlanetRepository] [FindAll] [Error] [%v]", err)
+		return 0, nil, err
+	}
+
+	var b bytes.Buffer
+
+	b.WriteString("SELECT CAST(p.Id AS CHAR(36)) Id, p.Name, p.Climate, p.Terrain FROM Planets p")
 	if name != "" {
 		b.WriteString(" WHERE p.Name = @name")
 	}
@@ -26,7 +59,8 @@ func (r *planetRepository) FindAll(name string, page int, limit int) ([]entities
 
 	rows, err := r.DB.Query(b.String(), sql.Named("name", name), sql.Named("page", page), sql.Named("limit", limit))
 	if err != nil {
-		return nil, err
+		logrus.Errorf("[PlanetRepository] [FindAll] [Error] [%v]", err)
+		return 0, nil, err
 	}
 	defer rows.Close()
 
@@ -34,16 +68,17 @@ func (r *planetRepository) FindAll(name string, page int, limit int) ([]entities
 	for rows.Next() {
 		var p entities.Planet
 		if err := rows.Scan(&p.ID, &p.Name, &p.Climate, &p.Terrain); err != nil {
-			return nil, err
+			logrus.Errorf("[PlanetRepository] [FindAll] [Error] [%v]", err)
+			return 0, nil, err
 		}
 		planets = append(planets, p)
 	}
 
 	if len(planets) <= 0 {
-		return nil, sql.ErrNoRows
+		return 0, nil, sql.ErrNoRows
 	}
 
-	return planets, nil
+	return count, planets, nil
 }
 
 func (r *planetRepository) FindByID(id string) (*entities.Planet, error) {
@@ -65,6 +100,7 @@ func (r *planetRepository) FindByID(id string) (*entities.Planet, error) {
 
 	rows, err := r.DB.Query(query, sql.Named("id", id))
 	if err != nil {
+		logrus.Errorf("[PlanetRepository] [FindByID] [Error] [%v]", err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -75,6 +111,7 @@ func (r *planetRepository) FindByID(id string) (*entities.Planet, error) {
 
 	for rows.Next() {
 		if err := rows.Scan(&p.ID, &p.Name, &p.Climate, &p.Terrain, &f.ID, &f.PlanetID, &f.Title, &f.Director, &f.ReleaseDate); err != nil {
+			logrus.Errorf("[PlanetRepository] [FindByID] [Error] [%v]", err)
 			return nil, err
 		}
 
@@ -99,6 +136,7 @@ func (r *planetRepository) AddPlanet(p *entities.Planet) error {
 
 	stmt, err := r.DB.Prepare(query)
 	if err != nil {
+		logrus.Errorf("[PlanetRepository] [AddPlanet] [Error] [%v]", err)
 		return err
 	}
 	defer stmt.Close()
@@ -110,6 +148,7 @@ func (r *planetRepository) AddPlanet(p *entities.Planet) error {
 		sql.Named("terrain", p.Terrain))
 
 	if err != nil {
+		logrus.Errorf("[PlanetRepository] [AddPlanet] [Error] [%v]", err)
 		return err
 	}
 
@@ -126,6 +165,7 @@ func (r *planetRepository) AddFilm(f *entities.Film) error {
 
 	stmt, err := r.DB.Prepare(query)
 	if err != nil {
+		logrus.Errorf("[PlanetRepository] [AddFilm] [Error] [%v]", err)
 		return err
 	}
 	defer stmt.Close()
@@ -138,6 +178,7 @@ func (r *planetRepository) AddFilm(f *entities.Film) error {
 		sql.Named("releaseDate", f.ReleaseDate))
 
 	if err != nil {
+		logrus.Errorf("[PlanetRepository] [AddFilm] [Error] [%v]", err)
 		return err
 	}
 
@@ -152,18 +193,21 @@ func (r *planetRepository) AddFilm(f *entities.Film) error {
 func (r *planetRepository) Remove(id string) error {
 	planet, err := r.FindByID(id)
 	if err != nil {
+		logrus.Errorf("[PlanetRepository] [Remove] [Error] [%v]", err)
 		return err
 	}
 
 	query := `DELETE FROM Planets WHERE Id = @id`
 	stmt, err := r.DB.Prepare(query)
 	if err != nil {
+		logrus.Errorf("[PlanetRepository] [Remove] [Error] [%v]", err)
 		return err
 	}
 	defer stmt.Close()
 
 	result, err := stmt.Exec(sql.Named("id", planet.ID))
 	if err != nil {
+		logrus.Errorf("[PlanetRepository] [Remove] [Error] [%v]", err)
 		return err
 	}
 

@@ -1,6 +1,0 @@
-{"level":"error","message":"sql: no rows in result set","timestamp":"2022-10-17T16:45:37-03:00"}
-{"level":"error","message":"sql: no rows in result set","timestamp":"2022-10-17T16:46:31-03:00"}
-{"level":"error","message":"sql: no rows in result set","timestamp":"2022-10-17T16:46:41-03:00"}
-{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-17T16:47:55-03:00"}
-{"level":"error","message":"sql: no rows in result set","timestamp":"2022-10-17T16:48:05-03:00"}
-{"level":"error","message":"sql: no rows in result set","timestamp":"2022-10-17T18:17:18-03:00"}
