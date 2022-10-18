@@ -33,7 +33,7 @@ cobertura dos testes;
 </p>
 
 # Testes de unidade
-- Para executar os testes de unidade, devemos utilizar o comando <strong>[Os comandos abaixo executa os testes de unidade e gera o arquivo com a cobertura]</strong>
+- Para executar os testes de unidade, devemos utilizar os comandos <strong>[Os comandos abaixo executa os testes de unidade e gera o arquivo com a cobertura]</strong>
   ```
   make test
   ```
@@ -44,7 +44,7 @@ cobertura dos testes;
   ```
 
 # Executando com Docker
-- Para executar o projeto local com docker, devemos utilizar o comando <strong>[Os comandos abaixo gera um container de banco de dados, faz criação das tabelas e executa a API]</strong>
+- Para executar o projeto local com docker, devemos utilizar os comandos <strong>[Os comandos abaixo gera um container de banco de dados, faz criação das tabelas e executa a API]</strong>
   ```
   make start
   ```
@@ -88,12 +88,12 @@ cobertura dos testes;
  ```
 - Pode ser utilizado os testes no caminho <strong>tests/planets.http</strong>
 
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=bugs)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=code_smells)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=coverage)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
-
 # Utilizando o projeto em um ambiente Kubernetes [Simulando produção]
 <p align="center">
   <img src="docs/k8s-exemplo.png" width="800" title="Main">
 </p>
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=bugs)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=code_smells)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=coverage)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
