@@ -28,11 +28,16 @@ jobs:
     - name: "Unit Tests"
       run: go test --coverprofile tests/coverage.out ./...
 
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
+    - name: Analyze with SonarCloud
+      uses: sonarsource/sonarcloud-github-action@master
+      with:
+        projectBaseDir: .
+        args: >
+          -Dsonar.organization=jailtonjunior94 -Dsonar.projectKey=JailtonJunior94_challenge-api -Dsonar.projectName=challenge-api -Dsonar.projectVersion=1.0 -Dsonar.language=go -Dsonar.sources=. -Dsonar.exclusions=**/*_test.go -Dsonar.tests=. -Dsonar.test.inclusions=**/*_test.go -Dsonar.go.coverage.reportPaths=tests/coverage.out -Dsonar.sourceEncoding=UTF-8 -Dsonar.verbose=true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
     - name: Variable Substitution
       uses: microsoft/variable-substitution@v1
