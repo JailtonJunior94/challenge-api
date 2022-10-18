@@ -93,3 +93,36 @@ func TestAddFilm(t *testing.T) {
 		})
 	}
 }
+
+func TestAddFilms(t *testing.T) {
+	films := []Film{
+		{
+			Title: "A New Hope", Director: "George Lucas", ReleaseDate: "1977-05-25",
+		},
+	}
+
+	testCases := []struct {
+		name     string
+		planet   Planet
+		film     []Film
+		expected func(p *Planet, err error)
+	}{
+		{
+			name:   "Should add film with success",
+			planet: Planet{Name: "Tatooine", Climate: "arid", Terrain: "desert"},
+			film:   films,
+			expected: func(p *Planet, err error) {
+				assert.Nil(t, err)
+				assert.NotNil(t, p)
+			},
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			planet, _ := NewPlanet(tc.planet.Name, tc.planet.Climate, tc.planet.Terrain)
+			err := planet.AddFilms(tc.film)
+			tc.expected(planet, err)
+		})
+	}
+}

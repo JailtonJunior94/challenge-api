@@ -18,6 +18,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "challenge_rg" {
-  name     = "challenge-rg"
+  name     = "challenges-rg"
   location = var.location
 }

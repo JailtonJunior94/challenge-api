@@ -419,3 +419,4 @@
 {"level":"error","message":"[FindByIDUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T12:36:30-03:00"}
 {"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T12:36:30-03:00"}
 {"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T12:36:35-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [Execute] [Base de dados já carregada]","timestamp":"2022-10-18T13:42:16-03:00"}

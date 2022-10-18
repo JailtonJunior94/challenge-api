@@ -79,3 +79,5 @@ cobertura dos testes;
   <img src="docs/logs.png" width="800" title="Main">
 </p>
   
+# Sonar Cloud
+- Exemplo do projeto depois de analisado no Sonar Cloud

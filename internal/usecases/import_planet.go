@@ -6,18 +6,17 @@ import (
 	"github.com/jailtonjunior94/challenge/internal/domain/dtos"
 	"github.com/jailtonjunior94/challenge/internal/domain/entities"
 	"github.com/jailtonjunior94/challenge/internal/domain/interfaces"
-	"github.com/jailtonjunior94/challenge/internal/infra/facades"
 
 	"github.com/sirupsen/logrus"
 )
 
 type importPlanetUseCase struct {
 	PlanetRepository interfaces.PlanetRepository
-	StarWarsAPI      *facades.StarWarsFacade
+	StarWarsAPI      interfaces.StarWarsFacade
 	StarWarsBaseURL  string
 }
 
-func NewImportPlanetUseCase(planetRepository interfaces.PlanetRepository, starWarsAPI *facades.StarWarsFacade, starWarsBaseURL string) *importPlanetUseCase {
+func NewImportPlanetUseCase(planetRepository interfaces.PlanetRepository, starWarsAPI interfaces.StarWarsFacade, starWarsBaseURL string) *importPlanetUseCase {
 	return &importPlanetUseCase{
 		PlanetRepository: planetRepository,
 		StarWarsAPI:      starWarsAPI,
@@ -86,12 +85,7 @@ func (u *importPlanetUseCase) fetchPlanets() ([]entities.Planet, error) {
 			continue
 		}
 
-		films, err := u.fetchFilms(planet.ID, p.Films)
-		if err != nil {
-			logrus.Errorf("[ImportPlanetUseCase] [fetchPlanets] [Error] [%v]", err)
-			continue
-		}
-
+		films, _ := u.fetchFilms(planet.ID, p.Films)
 		planet.AddFilms(films)
 		planetsEntity = append(planetsEntity, *planet)
 		logrus.Infof("[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [%s]", p.Name)

@@ -3,6 +3,7 @@ package mocks
 import (
 	"github.com/jailtonjunior94/challenge/internal/domain/dtos"
 	"github.com/jailtonjunior94/challenge/internal/domain/entities"
+
 	"github.com/stretchr/testify/mock"
 )
 
