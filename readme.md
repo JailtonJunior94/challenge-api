@@ -75,14 +75,14 @@ cobertura dos testes;
 
 # Logs estruturados
 - Exemplo dos logs estruturados <strong>[Caminho do arquivo (exemplo) cmd/api/logs.txt]</strong>
-  <p align="center">
+<p align="center">
   <img src="docs/logs.png" width="800" title="Main">
 </p>
   
 # Collection do POSTMAN
 - Link da Collection
 - Ambiente Local <strong>http://localhost:8080</strong>
-- Ambiente Simulando Produção <strong></strong>
+- Ambiente Simulando Produção <strong>http://20.246.221.128</strong>
  ```
  https://www.getpostman.com/collections/0acb7b5c4b1e38b8e2d3
  ```
@@ -94,3 +94,6 @@ cobertura dos testes;
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
 
 # Utilizando o projeto em um ambiente Kubernetes [Simulando produção]
+<p align="center">
+  <img src="docs/k8s-exemplo.png" width="800" title="Main">
+</p>

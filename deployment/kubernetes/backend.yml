@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: challenge-api
-        image: jailtonjunior/financial_api:v1
+        image: jailtonjunior/challenge_api:v14
         ports:
         - containerPort: 80
         resources:
