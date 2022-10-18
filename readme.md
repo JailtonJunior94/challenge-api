@@ -62,6 +62,16 @@ cobertura dos testes;
   ```
 
 # Infra como código
+- Precisamos de uma conta do Microsoft Azure
+- Para gerar a infra como código, precisamos instalar a [CLI do Azure](https://learn.microsoft.com/pt-br/cli/azure/install-azure-cli) 
+- Gerando o recurso AKS e MSSQL no Microsoft Azure com [Terraform](https://www.terraform.io/)
+- Na pasta deployment/iac, devemos executar os seguintes comandos
+  ```
+  terraform init -- inicia a infra como código
+  terraform validate -- valida os arquivos .tf
+  terraform plan -- mostra o planejamento do que será criado
+  terraform apply -- aplica nossa infra. para remover é só alterar o apply para destroy
+  ```
 
 # Logs estruturados
 - Exemplo dos logs estruturados <strong>[Caminho do arquivo (exemplo) cmd/api/logs.txt]</strong>

@@ -13,6 +13,7 @@ import (
 
 	_ "github.com/denisenkom/go-mssqldb"
 	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 )
 
 func main() {
@@ -47,6 +48,7 @@ func main() {
 	go importUseCase.Execute()
 
 	router := chi.NewRouter()
+	router.Use(middleware.Heartbeat("/health"))
 
 	router.Get("/planets", planetHandler.GetPlanets)
 	router.Get("/planets/{id}", planetHandler.GetPlanetByID)
