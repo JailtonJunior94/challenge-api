@@ -26,6 +26,12 @@ func NewImportPlanetUseCase(planetRepository interfaces.PlanetRepository, starWa
 }
 
 func (u *importPlanetUseCase) Execute() error {
+	count, _ := u.PlanetRepository.CountPlanets("")
+	if count > 0 {
+		logrus.Info("[ImportPlanetUseCase] [Execute] [Base de dados já carregada]")
+		return nil
+	}
+
 	planets, err := u.fetchPlanets()
 	if err != nil {
 		logrus.Errorf("[ImportPlanetUseCase] [Execute] [Error] [%v]", err)

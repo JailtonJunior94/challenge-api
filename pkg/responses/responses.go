@@ -13,7 +13,6 @@ func JSON(w http.ResponseWriter, statusCode int, data interface{}) {
 	if err := json.NewEncoder(w).Encode(data); err != nil {
 		logrus.Errorf(err.Error())
 	}
-
 }
 
 func Error(w http.ResponseWriter, statusCode int, errorMessage string) {

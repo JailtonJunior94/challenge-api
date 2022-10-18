@@ -5,43 +5,33 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/jailtonjunior94/challenge/internal/domain/dtos"
 	"github.com/jailtonjunior94/challenge/internal/domain/interfaces"
-	"github.com/jailtonjunior94/challenge/pkg/responses"
 
-	"github.com/go-chi/chi/v5"
 	"github.com/sirupsen/logrus"
 )
 
-type removePlanetUseCase struct {
+type RemovePlanetUseCase struct {
 	PlanetRepository interfaces.PlanetRepository
 }
 
-func NewRemovePlanetUseCase(planetRepository interfaces.PlanetRepository) *removePlanetUseCase {
-	return &removePlanetUseCase{
+func NewRemovePlanetUseCase(planetRepository interfaces.PlanetRepository) *RemovePlanetUseCase {
+	return &RemovePlanetUseCase{
 		PlanetRepository: planetRepository,
 	}
 }
 
-func (h *removePlanetUseCase) RemovePlanetByID(w http.ResponseWriter, r *http.Request) {
-	id := chi.URLParam(r, "id")
-	if id == "" {
-		responses.Error(w, http.StatusUnprocessableEntity, "ID ausente ou mal formatado")
-		return
-	}
-
-	err := h.PlanetRepository.Remove(id)
+func (u *RemovePlanetUseCase) Execute(id string) *dtos.HttpResponse {
+	err := u.PlanetRepository.Remove(id)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
-			responses.Error(w, http.StatusNotFound, "Não foi encontrado nenhum planeta")
-			logrus.Errorf("[RemovePlanetUseCase] [RemovePlanetByID] [Error] [%v]", err)
-			return
+			logrus.Errorf("[RemovePlanetUseCase] [Error] [%v]", err)
+			return dtos.NewHttpResponse(http.StatusNoContent, nil)
 		}
-
-		responses.Error(w, http.StatusInternalServerError, "Não foi possível remover planeta")
-		logrus.Errorf("[RemovePlanetUseCase] [RemovePlanetByID] [Error] [%v]", err)
-		return
+		logrus.Errorf("[RemovePlanetUseCase] [Error] [%v]", err)
+		return dtos.NewHttpResponse(http.StatusInternalServerError, nil)
 	}
 
-	logrus.Info("[RemovePlanetUseCase] [RemovePlanetByID] [Sucesso ao remover planeta por ID]")
-	responses.JSON(w, http.StatusNoContent, nil)
+	logrus.Info("[RemovePlanetUseCase] [Planeta removido com sucesso]")
+	return dtos.NewHttpResponse(http.StatusNoContent, nil)
 }

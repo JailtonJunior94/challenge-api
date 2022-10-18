@@ -143,3 +143,172 @@
 {"level":"info","message":"[FetchPlanetUseCase] [GetPlanets] [Sucesso ao obter planetas]","timestamp":"2022-10-17T22:54:23-03:00"}
 {"level":"error","message":"[FetchPlanetUseCase] [GetPlanetByID] [Error] [sql: no rows in result set]","timestamp":"2022-10-17T22:54:26-03:00"}
 {"level":"info","message":"[FetchPlanetUseCase] [GetPlanets] [Sucesso ao obter planetas]","timestamp":"2022-10-17T22:54:29-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Tatooine]","timestamp":"2022-10-18T08:32:29-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Geonosis]","timestamp":"2022-10-18T08:32:32-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Eriadu]","timestamp":"2022-10-18T08:32:37-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Mon Cala]","timestamp":"2022-10-18T08:32:42-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Tund]","timestamp":"2022-10-18T08:32:46-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Mirial]","timestamp":"2022-10-18T08:32:51-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [A New Hope]","timestamp":"2022-10-18T08:32:57-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [A New Hope]","timestamp":"2022-10-18T08:32:57-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Return of the Jedi]","timestamp":"2022-10-18T08:33:03-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Return of the Jedi]","timestamp":"2022-10-18T08:33:03-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [The Phantom Menace]","timestamp":"2022-10-18T08:33:10-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [The Phantom Menace]","timestamp":"2022-10-18T08:33:10-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Attack of the Clones]","timestamp":"2022-10-18T08:33:17-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Attack of the Clones]","timestamp":"2022-10-18T08:33:17-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:33:27-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:33:27-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Tatooine]","timestamp":"2022-10-18T08:33:27-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [A New Hope]","timestamp":"2022-10-18T08:33:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [A New Hope]","timestamp":"2022-10-18T08:33:33-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:33:40-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:33:40-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Alderaan]","timestamp":"2022-10-18T08:33:40-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [A New Hope]","timestamp":"2022-10-18T08:33:44-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [A New Hope]","timestamp":"2022-10-18T08:33:44-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Yavin IV]","timestamp":"2022-10-18T08:33:44-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [The Empire Strikes Back]","timestamp":"2022-10-18T08:33:51-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [The Empire Strikes Back]","timestamp":"2022-10-18T08:33:51-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Hoth]","timestamp":"2022-10-18T08:33:51-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [The Empire Strikes Back]","timestamp":"2022-10-18T08:33:57-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [The Empire Strikes Back]","timestamp":"2022-10-18T08:33:57-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Return of the Jedi]","timestamp":"2022-10-18T08:34:03-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Return of the Jedi]","timestamp":"2022-10-18T08:34:03-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:12-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:12-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Dagobah]","timestamp":"2022-10-18T08:34:12-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [The Empire Strikes Back]","timestamp":"2022-10-18T08:34:17-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [The Empire Strikes Back]","timestamp":"2022-10-18T08:34:18-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Bespin]","timestamp":"2022-10-18T08:34:18-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Return of the Jedi]","timestamp":"2022-10-18T08:34:20-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Return of the Jedi]","timestamp":"2022-10-18T08:34:20-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Endor]","timestamp":"2022-10-18T08:34:20-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Return of the Jedi]","timestamp":"2022-10-18T08:34:21-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Return of the Jedi]","timestamp":"2022-10-18T08:34:21-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [The Phantom Menace]","timestamp":"2022-10-18T08:34:22-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [The Phantom Menace]","timestamp":"2022-10-18T08:34:22-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Attack of the Clones]","timestamp":"2022-10-18T08:34:22-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Attack of the Clones]","timestamp":"2022-10-18T08:34:22-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:23-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:23-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Naboo]","timestamp":"2022-10-18T08:34:23-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Return of the Jedi]","timestamp":"2022-10-18T08:34:23-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Return of the Jedi]","timestamp":"2022-10-18T08:34:23-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [The Phantom Menace]","timestamp":"2022-10-18T08:34:24-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [The Phantom Menace]","timestamp":"2022-10-18T08:34:24-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Attack of the Clones]","timestamp":"2022-10-18T08:34:25-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Attack of the Clones]","timestamp":"2022-10-18T08:34:25-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:25-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:25-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Coruscant]","timestamp":"2022-10-18T08:34:25-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Attack of the Clones]","timestamp":"2022-10-18T08:34:26-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Attack of the Clones]","timestamp":"2022-10-18T08:34:26-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Kamino]","timestamp":"2022-10-18T08:34:26-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Attack of the Clones]","timestamp":"2022-10-18T08:34:26-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Attack of the Clones]","timestamp":"2022-10-18T08:34:26-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Geonosis]","timestamp":"2022-10-18T08:34:26-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:27-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:27-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Utapau]","timestamp":"2022-10-18T08:34:27-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:28-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:28-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Mustafar]","timestamp":"2022-10-18T08:34:28-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:28-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:29-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Kashyyyk]","timestamp":"2022-10-18T08:34:29-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:30-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:30-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Polis Massa]","timestamp":"2022-10-18T08:34:30-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:31-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:31-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Mygeeto]","timestamp":"2022-10-18T08:34:31-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:31-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:31-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Felucia]","timestamp":"2022-10-18T08:34:31-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Cato Neimoidia]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [Revenge of the Sith]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Saleucami]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Stewjon]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Eriadu]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Corellia]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Rodia]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Nal Hutta]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Dantooine]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Bestine IV]","timestamp":"2022-10-18T08:34:32-03:00"}
+{"level":"info","message":"[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [The Empire Strikes Back]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchFilms] [Sucesso ao obter detalhes do filme] [The Empire Strikes Back]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Ord Mantell]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [unknown]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Trandosha]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Socorro]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Mon Cala]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Chandrila]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Sullust]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Toydaria]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Malastare]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Dathomir]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Ryloth]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Aleen Minor]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Vulpter]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Troiken]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Tund]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Haruun Kal]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Cerea]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Glee Anselm]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Iridonia]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Tholoth]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Iktotch]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Quermia]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Dorin]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Champala]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Mirial]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Serenno]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Concord Dawn]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Zolan]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Ojom]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Skako]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Muunilinst]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Shili]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Kalee]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [fetchPlanets] [Sucesso ao obter detalhes do planeta] [Umbara]","timestamp":"2022-10-18T08:34:33-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [Execute] [Sucesso ao importar dados da API Star Wars]","timestamp":"2022-10-18T08:34:35-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T08:41:20-03:00"}
+{"level":"info","message":"[FindByIDUseCase] [Planeta encontrado com sucesso]","timestamp":"2022-10-18T08:41:50-03:00"}
+{"level":"error","message":"[FindByIDUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:42:07-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:42:11-03:00"}
+{"level":"info","message":"[FindByIDUseCase] [Planeta encontrado com sucesso]","timestamp":"2022-10-18T08:42:22-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T08:42:37-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T08:42:51-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T08:43:28-03:00"}
+{"level":"info","message":"[FindByIDUseCase] [Planeta encontrado com sucesso]","timestamp":"2022-10-18T08:43:41-03:00"}
+{"level":"info","message":"[RemovePlanetUseCase] [Planeta removido com sucesso]","timestamp":"2022-10-18T08:44:05-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:44:05-03:00"}
+{"level":"error","message":"[PlanetRepository] [Remove] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:44:08-03:00"}
+{"level":"error","message":"[RemovePlanetUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:44:08-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:44:08-03:00"}
+{"level":"error","message":"[PlanetRepository] [Remove] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:44:09-03:00"}
+{"level":"error","message":"[RemovePlanetUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:44:09-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:44:09-03:00"}
+{"level":"error","message":"[FindByIDUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:44:12-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:44:12-03:00"}
+{"level":"error","message":"[FindByIDUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:44:13-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:44:13-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T08:44:15-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T08:44:17-03:00"}
+{"level":"error","message":"[FindAllUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:44:18-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [Execute] [Base de dados já carregada]","timestamp":"2022-10-18T08:45:36-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [Execute] [Base de dados já carregada]","timestamp":"2022-10-18T08:46:30-03:00"}
+{"level":"error","message":"[FindAllUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:46:36-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:46:36-03:00"}
+{"level":"error","message":"[FindAllUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:46:38-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:46:38-03:00"}
+{"level":"error","message":"[FindByIDUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:46:39-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:46:39-03:00"}
+{"level":"error","message":"[PlanetRepository] [Remove] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:46:42-03:00"}
+{"level":"error","message":"[RemovePlanetUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:46:42-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:46:42-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T08:46:44-03:00"}

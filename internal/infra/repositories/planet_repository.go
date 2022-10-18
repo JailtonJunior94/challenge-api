@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"database/sql"
 
+	"github.com/jailtonjunior94/challenge/internal/domain/dtos"
 	"github.com/jailtonjunior94/challenge/internal/domain/entities"
 	"github.com/sirupsen/logrus"
 )
@@ -16,7 +17,7 @@ func NewPlanetRepository(db *sql.DB) *planetRepository {
 	return &planetRepository{DB: db}
 }
 
-func (r *planetRepository) countPlanets(name string) (int, error) {
+func (r *planetRepository) CountPlanets(name string) (int, error) {
 	var b bytes.Buffer
 
 	b.WriteString(`SELECT COUNT(*) FROM Planets p`)
@@ -42,8 +43,8 @@ func (r *planetRepository) countPlanets(name string) (int, error) {
 	return count, nil
 }
 
-func (r *planetRepository) FindAll(name string, page int, limit int) (int, []entities.Planet, error) {
-	count, err := r.countPlanets(name)
+func (r *planetRepository) FindAll(f *dtos.FilterPlanetInput) (int, []entities.Planet, error) {
+	count, err := r.CountPlanets(f.Name)
 	if err != nil {
 		logrus.Errorf("[PlanetRepository] [FindAll] [Error] [%v]", err)
 		return 0, nil, err
@@ -52,12 +53,12 @@ func (r *planetRepository) FindAll(name string, page int, limit int) (int, []ent
 	var b bytes.Buffer
 
 	b.WriteString("SELECT CAST(p.Id AS CHAR(36)) Id, p.Name, p.Climate, p.Terrain FROM Planets p")
-	if name != "" {
+	if f.Name != "" {
 		b.WriteString(" WHERE p.Name = @name")
 	}
 	b.WriteString("	ORDER BY p.Name OFFSET @page ROWS FETCH NEXT @limit ROWS ONLY;")
 
-	rows, err := r.DB.Query(b.String(), sql.Named("name", name), sql.Named("page", page), sql.Named("limit", limit))
+	rows, err := r.DB.Query(b.String(), sql.Named("name", f.Name), sql.Named("page", f.Page), sql.Named("limit", f.Limit))
 	if err != nil {
 		logrus.Errorf("[PlanetRepository] [FindAll] [Error] [%v]", err)
 		return 0, nil, err
