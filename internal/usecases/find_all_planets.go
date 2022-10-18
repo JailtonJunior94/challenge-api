@@ -1,6 +1,8 @@
 package usecases
 
 import (
+	"database/sql"
+	"errors"
 	"net/http"
 
 	"github.com/jailtonjunior94/challenge/internal/domain/dtos"
@@ -20,12 +22,11 @@ func NewFindAllUseCase(planetRepository interfaces.PlanetRepository) *FindAllUse
 
 func (h *FindAllUseCase) Execute(input *dtos.FilterPlanetInput) *dtos.HttpResponse {
 	count, planets, err := h.PlanetRepository.FindAll(input)
-	if count <= 0 {
-		logrus.Errorf("[FindAllUseCase] [Error] [%v]", err)
-		return dtos.NewHttpResponse(http.StatusNoContent, nil)
-	}
-
 	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			logrus.Errorf("[FindAllUseCase] [Error] [%v]", err)
+			return dtos.NewHttpResponse(http.StatusNoContent, nil)
+		}
 		logrus.Errorf("[FindAllUseCase] [Error] [%v]", err)
 		return dtos.NewHttpResponse(http.StatusInternalServerError, nil)
 	}

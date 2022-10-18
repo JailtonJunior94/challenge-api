@@ -1,6 +1,7 @@
 package usecases
 
 import (
+	"database/sql"
 	"errors"
 	"net/http"
 	"testing"
@@ -33,7 +34,7 @@ func TestFindAll(t *testing.T) {
 
 func TestFindAllSqlNoRows(t *testing.T) {
 	planetRepositoryMock := new(mocks.PlanetRepositoryMock)
-	planetRepositoryMock.On("FindAll", mock.Anything).Return(0, nil, nil)
+	planetRepositoryMock.On("FindAll", mock.Anything).Return(0, nil, sql.ErrNoRows)
 
 	useCase := NewFindAllUseCase(planetRepositoryMock)
 	input := dtos.NewFilterPlanetInput("Yavin IV", "1", "10")
@@ -46,7 +47,7 @@ func TestFindAllSqlNoRows(t *testing.T) {
 
 func TestFindAllPlanetWithSQLException(t *testing.T) {
 	planetRepositoryMock := new(mocks.PlanetRepositoryMock)
-	planetRepositoryMock.On("FindAll", mock.Anything).Return(0, nil, errors.New("SQL EXCEPTION"))
+	planetRepositoryMock.On("FindAll", mock.Anything).Return(nil, nil, errors.New("SQL EXCEPTION"))
 
 	useCase := NewFindAllUseCase(planetRepositoryMock)
 	input := dtos.NewFilterPlanetInput("Yavin IV", "1", "10")
