@@ -7,7 +7,17 @@
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceFolder}/cmd/api/main.go",
-            "env": {},
+            "env": {
+                "DB_DRIVER": "sqlserver",
+                "DB_HOST": "localhost",
+                "DB_PORT": "1433",
+                "DB_USER": "sa",
+                "DB_PASSWORD": "@docker@2022",
+                "DB_NAME": "StarWarsDB",
+                "SERVER_PORT": "0.0.0.0:8080",
+                "STAR_WARS_API": "https://swapi.dev/api",
+                "LOG_PATH": "./logs.txt"
+            },
             "args": []
         },
         {

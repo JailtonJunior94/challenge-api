@@ -8,12 +8,22 @@ services:
   #     context: ..
   #     dockerfile: cmd/api/Dockerfile
   #   restart: always
+  #   depends_on:
+  #     - mssql
   #   ports:
-  #     - "9000:80"
+  #     - "8080:80"
   #   networks:
   #     - challeng_net
   #   environment:
-  #     - PORT=80
+  #     - DB_DRIVER=sqlserver
+  #     - DB_HOST=mssql
+  #     - DB_PORT=1433
+  #     - DB_USER=sa
+  #     - DB_PASSWORD=@docker@2022
+  #     - DB_NAME=StarWarsDB
+  #     - SERVER_PORT=0.0.0.0:80
+  #     - STAR_WARS_API=https://swapi.dev/api
+  #     - LOG_PATH=/app/logs.txt
 
   mssql:
     container_name: mssql
@@ -27,6 +37,19 @@ services:
       ACCEPT_EULA: 'Y'
       SA_PASSWORD: '@docker@2022'
       MSSQL_AGENT_ENABLED: 'True'
+      MSSQL_PID: "Developer"
+
+  mssqltools:
+    container_name: mssql-tools
+    image: mcr.microsoft.com/mssql-tools
+    networks:
+      - challeng_net
+    depends_on:
+      - mssql
+    volumes:
+      - ../resources/database.sql:/tmp/database.sql
+      - ../resources/init-database.sh:/tmp/init-database.sh
+    command: /bin/bash ./tmp/init-database.sh
 
 networks:
   challeng_net:

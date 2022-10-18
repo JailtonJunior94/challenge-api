@@ -1,3 +1,9 @@
+CREATE DATABASE [StarWarsDB]
+GO
+
+USE [StarWarsDB]
+GO
+
 CREATE TABLE [Planets] 
 (
    [Id] UNIQUEIDENTIFIER PRIMARY KEY,
@@ -5,6 +11,7 @@ CREATE TABLE [Planets]
    [Climate] VARCHAR(100) NOT NULL,
    [Terrain] VARCHAR(100) NOT NULL,
 );
+GO
 
 CREATE TABLE [Films]
 (

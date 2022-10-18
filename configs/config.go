@@ -19,10 +19,9 @@ type Conf struct {
 func LoadConfig(path string) (*Conf, error) {
 	var cfg *Conf
 
-	viper.SetConfigName("app_config")
-	viper.SetConfigType("env")
 	viper.AddConfigPath(path)
-	viper.SetConfigFile(".env")
+	viper.SetConfigName("app")
+	viper.SetConfigType("env")
 	viper.AutomaticEnv()
 
 	err := viper.ReadInConfig()

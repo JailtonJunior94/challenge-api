@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/jailtonjunior94/challenge/configs"
+	"github.com/jailtonjunior94/challenge/internal/infra/facades"
 	"github.com/jailtonjunior94/challenge/internal/infra/repositories"
 	"github.com/jailtonjunior94/challenge/internal/usecases"
 	"github.com/jailtonjunior94/challenge/pkg/database"
@@ -28,9 +29,13 @@ func main() {
 	}
 	defer db.Close()
 
+	starWarsAPI := facades.NewStarWarsFacade()
 	planetRepository := repositories.NewPlanetRepository(db)
 	fetchUseCase := usecases.NewFetchPlanetUseCase(planetRepository)
 	removeUseCase := usecases.NewRemovePlanetUseCase(planetRepository)
+
+	importUseCase := usecases.NewImportPlanetUseCase(planetRepository, starWarsAPI, config.StarWarsAPI)
+	go importUseCase.Execute()
 
 	router := chi.NewRouter()
 
@@ -38,5 +43,5 @@ func main() {
 	router.Get("/planets/{id}", fetchUseCase.GetPlanetByID)
 	router.Delete("/planets/{id}", removeUseCase.RemovePlanetByID)
 
-	http.ListenAndServe(":8080", router)
+	http.ListenAndServe(config.ServerPort, router)
 }
