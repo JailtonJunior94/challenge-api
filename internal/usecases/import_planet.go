@@ -33,21 +33,21 @@ func (u *importPlanetUseCase) Execute() error {
 
 	planets, err := u.fetchPlanets()
 	if err != nil {
-		logrus.Errorf("[ImportPlanetUseCase] [Execute] [Error] [%v]", err)
+		logrus.Errorf("[ImportPlanetUseCase] [Execute] [FetchPlanetsError] [Error] [%v]", err)
 		return err
 	}
 
 	for _, p := range planets {
 		err = u.PlanetRepository.AddPlanet(&p)
 		if err != nil {
-			logrus.Errorf("[ImportPlanetUseCase] [Execute] [Error] [%v]", err)
+			logrus.Errorf("[ImportPlanetUseCase] [Execute] [AddPlanetError] [Error] [%v]", err)
 			continue
 		}
 
 		for _, f := range p.Films {
 			err = u.PlanetRepository.AddFilm(&f)
 			if err != nil {
-				logrus.Errorf("[ImportPlanetUseCase] [Execute] [Error] [%v]", err)
+				logrus.Errorf("[ImportPlanetUseCase] [Execute] [AddFilmError] [Error] [%v]", err)
 				continue
 			}
 		}
@@ -81,7 +81,7 @@ func (u *importPlanetUseCase) fetchPlanets() ([]entities.Planet, error) {
 	for _, p := range planets {
 		planet, err := entities.NewPlanet(p.Name, p.Climate, p.Terrain)
 		if err != nil {
-			logrus.Errorf("[ImportPlanetUseCase] [fetchPlanets] [Error] [%v]", err)
+			logrus.Errorf("[ImportPlanetUseCase] [fetchPlanets] [NewPlanetError] [Error] [%v]", err)
 			continue
 		}
 
@@ -106,7 +106,7 @@ func (u *importPlanetUseCase) fetchFilms(planetID string, filmsInput []string) (
 
 		film, err := entities.NewFilm(planetID, f.Title, f.Director, f.ReleaseDate)
 		if err != nil {
-			logrus.Errorf("[ImportPlanetUseCase] [fetchFilms] [Error] [%v]", err)
+			logrus.Errorf("[ImportPlanetUseCase] [fetchFilms] [NewFilmError] [Error] [%v]", err)
 			continue
 		}
 

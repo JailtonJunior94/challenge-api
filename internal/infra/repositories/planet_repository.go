@@ -46,7 +46,6 @@ func (r *planetRepository) CountPlanets(name string) (int, error) {
 func (r *planetRepository) FindAll(f *dtos.FilterPlanetInput) (int, []entities.Planet, error) {
 	count, err := r.CountPlanets(f.Name)
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [FindAll] [Error] [%v]", err)
 		return 0, nil, err
 	}
 
@@ -60,7 +59,6 @@ func (r *planetRepository) FindAll(f *dtos.FilterPlanetInput) (int, []entities.P
 
 	rows, err := r.DB.Query(b.String(), sql.Named("name", f.Name), sql.Named("page", f.Page), sql.Named("limit", f.Limit))
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [FindAll] [Error] [%v]", err)
 		return 0, nil, err
 	}
 	defer rows.Close()
@@ -69,7 +67,6 @@ func (r *planetRepository) FindAll(f *dtos.FilterPlanetInput) (int, []entities.P
 	for rows.Next() {
 		var p entities.Planet
 		if err := rows.Scan(&p.ID, &p.Name, &p.Climate, &p.Terrain); err != nil {
-			logrus.Errorf("[PlanetRepository] [FindAll] [Error] [%v]", err)
 			return 0, nil, err
 		}
 		planets = append(planets, p)
@@ -137,7 +134,6 @@ func (r *planetRepository) AddPlanet(p *entities.Planet) error {
 
 	stmt, err := r.DB.Prepare(query)
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [AddPlanet] [Error] [%v]", err)
 		return err
 	}
 	defer stmt.Close()
@@ -149,7 +145,6 @@ func (r *planetRepository) AddPlanet(p *entities.Planet) error {
 		sql.Named("terrain", p.Terrain))
 
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [AddPlanet] [Error] [%v]", err)
 		return err
 	}
 
@@ -166,7 +161,6 @@ func (r *planetRepository) AddFilm(f *entities.Film) error {
 
 	stmt, err := r.DB.Prepare(query)
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [AddFilm] [Error] [%v]", err)
 		return err
 	}
 	defer stmt.Close()
@@ -179,7 +173,6 @@ func (r *planetRepository) AddFilm(f *entities.Film) error {
 		sql.Named("releaseDate", f.ReleaseDate))
 
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [AddFilm] [Error] [%v]", err)
 		return err
 	}
 
@@ -194,21 +187,18 @@ func (r *planetRepository) AddFilm(f *entities.Film) error {
 func (r *planetRepository) Remove(id string) error {
 	planet, err := r.FindByID(id)
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [Remove] [Error] [%v]", err)
 		return err
 	}
 
 	query := `DELETE FROM Planets WHERE Id = @id`
 	stmt, err := r.DB.Prepare(query)
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [Remove] [Error] [%v]", err)
 		return err
 	}
 	defer stmt.Close()
 
 	result, err := stmt.Exec(sql.Named("id", planet.ID))
 	if err != nil {
-		logrus.Errorf("[PlanetRepository] [Remove] [Error] [%v]", err)
 		return err
 	}
 

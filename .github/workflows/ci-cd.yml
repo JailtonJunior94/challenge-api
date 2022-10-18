@@ -46,7 +46,7 @@ jobs:
       uses: docker/build-push-action@v2.4.0
       with:
         context: .
-        file: Dockerfile
+        file: cmd/api/Dockerfile
         push: true
         tags: |
           ${{ env.DOCKER_USERNAME }}/challenge_api:latest
