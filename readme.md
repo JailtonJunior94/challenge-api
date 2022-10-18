@@ -93,6 +93,11 @@ cobertura dos testes;
   <img src="docs/k8s-exemplo.png" width="800" title="Main">
 </p>
 
+# Sonar Cloud
+<p align="center">
+  <img src="docs/sonar.png" width="800" title="Main">
+</p>
+
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=bugs)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=code_smells)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=JailtonJunior94_challenge-api&metric=coverage)](https://sonarcloud.io/dashboard?id=JailtonJunior94_challenge-api)
