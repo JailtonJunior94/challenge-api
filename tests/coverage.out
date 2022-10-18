@@ -23,6 +23,12 @@ github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:55.44,56
 github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:60.2,61.12 2 1
 github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:56.17,58.3 1 1
 github.com/jailtonjunior94/challenge/internal/domain/entities/planet.go:64.47,67.2 2 0
+github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:18.88,22.2 1 1
+github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:24.65,26.16 2 1
+github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:35.2,36.52 2 1
+github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:26.16,27.36 1 1
+github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:31.3,32.67 2 1
+github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:27.36,30.4 2 1
 github.com/jailtonjunior94/challenge/internal/usecases/import_planet.go:20.157,26.2 1 0
 github.com/jailtonjunior94/challenge/internal/usecases/import_planet.go:28.47,30.15 2 0
 github.com/jailtonjunior94/challenge/internal/usecases/import_planet.go:35.2,36.16 2 0
@@ -67,12 +73,6 @@ github.com/jailtonjunior94/challenge/internal/usecases/find_all_planets.go:34.2,
 github.com/jailtonjunior94/challenge/internal/usecases/find_all_planets.go:25.16,26.36 1 1
 github.com/jailtonjunior94/challenge/internal/usecases/find_all_planets.go:30.3,31.67 2 1
 github.com/jailtonjunior94/challenge/internal/usecases/find_all_planets.go:26.36,29.4 2 1
-github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:18.88,22.2 1 1
-github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:24.65,26.16 2 1
-github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:35.2,36.52 2 1
-github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:26.16,27.36 1 1
-github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:31.3,32.67 2 1
-github.com/jailtonjunior94/challenge/internal/usecases/find_by_id_planet.go:27.36,30.4 2 1
 github.com/jailtonjunior94/challenge/internal/infra/repositories/planet_repository.go:16.56,18.2 1 1
 github.com/jailtonjunior94/challenge/internal/infra/repositories/planet_repository.go:20.67,24.16 3 0
 github.com/jailtonjunior94/challenge/internal/infra/repositories/planet_repository.go:28.2,29.16 2 0

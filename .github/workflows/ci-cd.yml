@@ -39,7 +39,7 @@ jobs:
     - name: Variable Substitution
       uses: microsoft/variable-substitution@v1
       with:
-        files: ${{ github.workspace }}/app.env.Production
+        files: ${{ github.workspace }}/cmd/api/app.env.Production
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
         DB_USER: ${{ secrets.DB_USER }}
