@@ -1,8 +1,3 @@
-{"level":"error","message":"[PlanetRepository] [countPlanets] [Error] [mssql: Invalid object name 'Planets'.]","timestamp":"2022-10-17T22:19:54-03:00"}
-{"level":"error","message":"[PlanetRepository] [FindAll] [Error] [mssql: Invalid object name 'Planets'.]","timestamp":"2022-10-17T22:19:54-03:00"}
-{"level":"error","message":"[FetchPlanetUseCase] [GetPlanets] [Error] [mssql: Invalid object name 'Planets'.]","timestamp":"2022-10-17T22:19:54-03:00"}
-{"level":"error","message":"[PlanetRepository] [FindByID] [Error] [mssql: Invalid object name 'Planets'.]","timestamp":"2022-10-17T22:19:57-03:00"}
-{"level":"error","message":"[FetchPlanetUseCase] [GetPlanetByID] [Error] [mssql: Invalid object name 'Planets'.]","timestamp":"2022-10-17T22:19:57-03:00"}
 {"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Tatooine]","timestamp":"2022-10-17T22:53:53-03:00"}
 {"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Geonosis]","timestamp":"2022-10-17T22:53:53-03:00"}
 {"level":"info","message":"[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [Eriadu]","timestamp":"2022-10-17T22:53:54-03:00"}
@@ -312,3 +307,10 @@
 {"level":"error","message":"[RemovePlanetUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T08:46:42-03:00"}
 {"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T08:46:42-03:00"}
 {"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T08:46:44-03:00"}
+{"level":"info","message":"[ImportPlanetUseCase] [Execute] [Base de dados já carregada]","timestamp":"2022-10-18T09:33:35-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T09:33:38-03:00"}
+{"level":"error","message":"[FindByIDUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T09:33:40-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T09:33:40-03:00"}
+{"level":"info","message":"[FindAllUseCase] [Planetas encontrados com sucesso]","timestamp":"2022-10-18T09:33:44-03:00"}
+{"level":"error","message":"[FindByIDUseCase] [Error] [sql: no rows in result set]","timestamp":"2022-10-18T09:33:46-03:00"}
+{"level":"error","message":"http: request method or response status code does not allow body","timestamp":"2022-10-18T09:33:46-03:00"}

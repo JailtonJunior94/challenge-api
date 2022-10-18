@@ -1,29 +1,21 @@
 version: "3"
 
 services:
-  # challenge_api:
-  #   container_name: challenge_api
-  #   image: challenge_api
-  #   build:
-  #     context: ..
-  #     dockerfile: cmd/api/Dockerfile
-  #   restart: always
-  #   depends_on:
-  #     - mssql
-  #   ports:
-  #     - "8080:80"
-  #   networks:
-  #     - challeng_net
-  #   environment:
-  #     - DB_DRIVER=sqlserver
-  #     - DB_HOST=mssql
-  #     - DB_PORT=1433
-  #     - DB_USER=sa
-  #     - DB_PASSWORD=@docker@2022
-  #     - DB_NAME=StarWarsDB
-  #     - SERVER_PORT=0.0.0.0:80
-  #     - STAR_WARS_API=https://swapi.dev/api
-  #     - LOG_PATH=/app/logs.txt
+  challenge_api:
+    container_name: challenge_api
+    image: challenge_api
+    build:
+      context: ..
+      dockerfile: cmd/api/Dockerfile
+    depends_on:
+      - mssql
+      - mssqltools
+    ports:
+      - "8080:8080"
+    networks:
+      - challeng_net
+    environment:
+      - ENVIRONMENT=Docker
 
   mssql:
     container_name: mssql

@@ -1,0 +1,23 @@
+@startuml desenho-arquitetura
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+!include DEVICONS/go.puml
+!include DEVICONS/mongodb.puml
+
+left to right direction
+
+Container(StarWarsAPI, "StarWars API", "REST", "Provê todas a informações reference a franquia Star Wars", "HTTPS/JSON")
+
+System_Boundary(fluxo, "Star Wars API") {  
+    Container(API, "API", "Golang", "API de gestão de planetas e filmes Star Wars", "Golang")    
+    ContainerDb(StarWarsDB, "StarWars DB", "MSSQL", "Armazena dados de planetas e filmes Star Wars", "T-SQL")
+
+    Rel(API, StarWarsAPI, "Obtém dados dos planetas e filmes em", "HTTP/JSON")
+    Rel_R(API, StarWarsDB, "Insere dados de planetas e filmes em", "T-SQL")
+}
+
+@enduml

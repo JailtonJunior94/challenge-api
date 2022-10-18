@@ -1,6 +1,9 @@
 package configs
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/spf13/viper"
 )
 
@@ -20,7 +23,7 @@ func LoadConfig(path string) (*Conf, error) {
 	var cfg *Conf
 
 	viper.AddConfigPath(path)
-	viper.SetConfigName("app")
+	viper.SetConfigName(fmt.Sprintf("app.env.%s", os.Getenv("ENVIRONMENT")))
 	viper.SetConfigType("env")
 	viper.AutomaticEnv()
 

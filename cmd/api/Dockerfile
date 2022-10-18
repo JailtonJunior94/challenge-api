@@ -13,7 +13,9 @@ RUN apk --no-cache add tzdata
 ENV TZ=America/Sao_Paulo
 
 COPY --from=builder /app/main .
-COPY cmd/api/app .
+COPY cmd/api/app.env.Development .
+COPY cmd/api/app.env.Docker .
+COPY cmd/api/app.env.Production .
 
 EXPOSE 80
 CMD [ "/app/main" ]
