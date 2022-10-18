@@ -45,7 +45,7 @@ func main() {
 	planetHandler := handlers.NewPlanetHandler(removeUseCase, findByIdUseCase, findAllUseCase)
 
 	/* Import data */
-	go importUseCase.Execute()
+	importUseCase.Execute()
 
 	router := chi.NewRouter()
 	router.Use(middleware.Heartbeat("/health"))

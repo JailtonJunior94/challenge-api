@@ -3,17 +3,14 @@ package facades
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
+	"io/ioutil"
 	"net/http"
 	"time"
 
 	"github.com/jailtonjunior94/challenge/internal/domain/dtos"
 
 	"github.com/sirupsen/logrus"
-)
-
-var (
-	ErrFetchPlanets = errors.New("cannot fetch planets")
-	ErrFetchMovies  = errors.New("cannot fetch movies")
 )
 
 type StarWarsFacade struct {
@@ -28,61 +25,59 @@ func NewStarWarsFacade() *StarWarsFacade {
 }
 
 func (f *StarWarsFacade) FetchPlanets(uri string) (*dtos.PaginateOutput[dtos.PlanetsOutput], error) {
-	req, err := http.NewRequest(http.MethodGet, uri, nil)
-	req.Header.Set("Content-Type", "application/json")
-
+	resp, err := f.request(http.MethodGet, uri, "application/json")
 	if err != nil {
-		logrus.Errorf("[StarWarsFacade] [FetchPlanets] [Error] [%v]", err)
 		return nil, err
-	}
-
-	resp, err := f.HttpClient.Do(req)
-	if err != nil {
-		logrus.Errorf("[StarWarsFacade] [FetchPlanets] [Error] [%v]", err)
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusOK {
-		logrus.Errorf("[StarWarsFacade] [FetchPlanets] [StatusCode] [%d]", resp.StatusCode)
-		return nil, ErrFetchPlanets
 	}
 
 	var paginate *dtos.PaginateOutput[dtos.PlanetsOutput]
-	if err := json.NewDecoder(resp.Body).Decode(&paginate); err != nil {
+	err = json.Unmarshal(resp, &paginate)
+	if err != nil {
 		return nil, err
 	}
 
-	logrus.Infof("[StarWarsFacade] [FetchPlanets] [Sucesso ao obter planeta] [Planeta] [%s]", paginate.Results[0].Name)
 	return paginate, nil
 }
 
 func (f *StarWarsFacade) FetchFilms(uri string) (*dtos.FilmsOutput, error) {
-	req, err := http.NewRequest(http.MethodGet, uri, nil)
-	req.Header.Set("Content-Type", "application/json")
-
+	resp, err := f.request(http.MethodGet, uri, "application/json")
 	if err != nil {
-		logrus.Errorf("[StarWarsFacade] [FetchFilms] [Error] [%v]", err)
 		return nil, err
 	}
 
+	var film *dtos.FilmsOutput
+	err = json.Unmarshal(resp, &film)
+	if err != nil {
+		return nil, err
+	}
+
+	return film, nil
+}
+
+func (f *StarWarsFacade) request(method, uri, contentType string) ([]byte, error) {
+	req, err := http.NewRequest(method, uri, nil)
+	if err != nil {
+		logrus.Errorf("[StarWarsFacade] [Error] [%v]", err)
+		return nil, err
+	}
+
+	req.Header.Set("Content-Type", contentType)
 	resp, err := f.HttpClient.Do(req)
+	statusCode := resp.StatusCode
 	if err != nil {
-		logrus.Errorf("[StarWarsFacade] [FetchFilms] [Error] [%v]", err)
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusOK {
-		logrus.Errorf("[StarWarsFacade] [FetchFilms] [StatusCode] [%d]", resp.StatusCode)
-		return nil, ErrFetchMovies
-	}
-
-	var movie *dtos.FilmsOutput
-	if err := json.NewDecoder(resp.Body).Decode(&movie); err != nil {
+		logrus.Errorf("[StarWarsFacade] [Error] [%v]", err)
 		return nil, err
 	}
 
-	logrus.Infof("[StarWarsFacade] [FetchFilms] [Sucesso ao obter filme] [Filme] [%s]", movie.Title)
-	return movie, nil
+	if resp != nil {
+		defer resp.Body.Close()
+	}
+
+	if statusCode < 200 || statusCode > 299 {
+		b, _ := ioutil.ReadAll(resp.Body)
+		return nil, errors.New(fmt.Sprintf("[ERROR] [StatusCode] [%d] [Detail] [%s]", statusCode, string(b)))
+	}
+
+	bytes, err := ioutil.ReadAll(resp.Body)
+	return bytes, err
 }

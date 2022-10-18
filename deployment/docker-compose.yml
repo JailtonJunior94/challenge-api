@@ -1,21 +1,21 @@
 version: "3"
 
 services:
-  challenge_api:
-    container_name: challenge_api
-    image: challenge_api
-    build:
-      context: ..
-      dockerfile: cmd/api/Dockerfile
-    depends_on:
-      - mssql
-      - mssqltools
-    ports:
-      - "8080:8080"
-    networks:
-      - challeng_net
-    environment:
-      - ENVIRONMENT=Docker
+  # challenge_api:
+  #   container_name: challenge_api
+  #   image: challenge_api
+  #   build:
+  #     context: ..
+  #     dockerfile: cmd/api/Dockerfile
+  #   depends_on:
+  #     - mssql
+  #     - mssqltools
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - challeng_net
+  #   environment:
+  #     - ENVIRONMENT=Docker
 
   mssql:
     container_name: mssql
