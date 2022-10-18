@@ -6,7 +6,7 @@ metadata:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: challenge_config
+  name: challenge-config
 data:
   ENVIRONMENT: "Production"
 ---
@@ -43,7 +43,7 @@ spec:
             memory: "64Mi"
         envFrom:
         - configMapRef:
-            name: challenge_config
+            name: challenge-config
         startupProbe:
           httpGet:
             path: /health
